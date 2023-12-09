@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div>
+        <form th:method="POST" th:action="@{/remove}" th:object="${user}">
+            <input hidden="hidden" type="number" th:field="*{id}">
+
+            <div>
+                <label for="nameUpdate">Name:</label>
+                <input hidden="hidden" th:utext="*{name}"  id="nameUpdate" >
+            </div>
+            <br/>
+
+            <div>
+                <label for="lastNameUpdate">Last Name:</label>
+                <input hidden="hidden" th:utext="*{lastName}" id="lastNameUpdate" >
+            </div>
+            <br/>
+            <div>
+                <label for="emailUpdate">Email:</label>
+                <input hidden="hidden" th:utext="*{email}" id="emailUpdate" >
+            </div>
+            <br/>
+            <div>
+                <label for="ageUpdate">Age:</label>
+                <input hidden="hidden" th:utext="*{age}"  id="ageUpdate">
+            </div>
+            <br/>
+            <input type="submit" value="Delete">
+        </form>
+    </div>
+</body>
+</html>
